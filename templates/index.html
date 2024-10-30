@@ -9,15 +9,33 @@
 <body>
     <div class="form-container">
         <h1>Sugerencia de Canciones</h1>
-        <form action="/enviar" method="POST">
+        <form id="sugerenciaForm" action="/enviar" method="POST">
             <label for="cancion">Canción</label>
             <input type="text" id="cancion" name="cancion" required>
-    
             <label for="artista">Artista</label>
             <input type="text" id="artista" name="artista" required>
-    
             <button type="submit">Enviar</button>
         </form>
-    </div>   
+    </div>
+
+    <script>
+        const form = document.getElementById('sugerenciaForm');
+        const cancionInput = document.getElementById('cancion');
+        const artistaInput = document.getElementById('artista');
+        let previousResponses = [];
+
+        form.addEventListener('submit', function(event) {
+            const cancionValue = cancionInput.value.trim().toLowerCase();
+            const artistaValue = artistaInput.value.trim().toLowerCase();
+            const fullValue = cancionValue + ' - ' + artistaValue;
+
+            if (previousResponses.includes(fullValue)) {
+                alert('Esta sugerencia ya ha sido registrada. Por favor, ingrese una diferente.');
+                event.preventDefault();
+            } else {
+                previousResponses.push(fullValue);
+            }
+        });
+    </script>
 </body>
 </html>
