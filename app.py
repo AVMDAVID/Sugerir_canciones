@@ -33,7 +33,7 @@ def enviar():
             flash('Esta sugerencia ya ha sido registrada. Por favor, ingrese una diferente.')
             return redirect('/')
 
-    worksheet.append_row([cancion, artista, "Enviada", fecha_sugerencia])
+    worksheet.append_row([cancion, artista, "📩 Enviada", fecha_sugerencia])
     flash('Sugerencia registrada exitosamente.')
     return redirect('/')
 
