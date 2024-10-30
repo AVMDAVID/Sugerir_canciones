@@ -81,6 +81,14 @@ body {
     transition: transform 0.1s;  /* Transición rápida al hacer clic */
 }
 
+.flash-messages {
+    color: #8B0000;  /* Dark red color */
+    text-align: center;  /* Center alignment */
+    font-weight: bold;  /* Make the message bold */
+    margin: 20px 0;  /* Space above and below the message */
+}
+
+
 /* Estilos responsivos */
 @media (max-width: 600px) {
     body {

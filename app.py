@@ -30,11 +30,11 @@ def enviar():
     existing_records = worksheet.get_all_records()
     for record in existing_records:
         if record.get('Nombre de la Canción', '').upper() == cancion and record.get('Artista', '').upper() == artista:
-            flash('Esta sugerencia ya ha sido registrada. Por favor, ingrese una diferente.')
+            flash('Esta canción ya ha sido registrada. Por favor, ingrese una diferente.')
             return redirect('/')
 
     worksheet.append_row([cancion, artista, "📩 Enviada", fecha_sugerencia])
-    flash('Sugerencia registrada exitosamente.')
+    flash('Canción registrada exitosamente.')
     return redirect('/')
 
 if __name__ == '__main__':
