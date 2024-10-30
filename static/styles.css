@@ -74,3 +74,20 @@ body {
     transform: scale(0.95);  /* Reducir el tamaño del botón al hacer clic */
     transition: transform 0.1s;  /* Transición rápida al hacer clic */
 }
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;  /* Reducir el padding en móviles */
+    }
+
+    .form-container h1 {
+        font-size: 24px;  /* Tamaño de fuente más pequeño */
+    }
+
+    .form-container input[type="text"],
+    .form-container button {
+        font-size: 14px;  /* Tamaño de fuente más pequeño */
+        padding: 12px;  /* Reducir el tamaño del padding en campos y botones */
+    }
+}
