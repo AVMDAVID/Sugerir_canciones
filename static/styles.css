@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('fondo.jpg');  /* Relative or absolute path to your local image */
+    background-image: url('fondo.png');  /* Relative or absolute path to your local image */
     background-size: cover;  /* Make sure the image covers the whole background */
     background-position: center;  /* Center the background image */
     display: flex;
