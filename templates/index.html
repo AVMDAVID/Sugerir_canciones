@@ -2,19 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Sugerencias de Canciones</title>
 </head>
 <body>
-    <h1>Formulario de Sugerencias de Canciones</h1>
-    <form action="/enviar" method="POST">
-        <label for="cancion">Nombre de la Canción:</label>
-        <input type="text" id="cancion" name="cancion" required>
-        <br><br>
-        <label for="artista">Artista:</label>
-        <input type="text" id="artista" name="artista" required>
-        <br><br>
-        <button type="submit">Enviar Sugerencia</button>
-    </form>
+    <div class="form-container">
+        <h1>Sugerencia de Canciones</h1>
+        <form action="/enviar" method="POST">
+            <label for="cancion">Canción</label>
+            <input type="text" id="cancion" name="cancion" required>
+    
+            <label for="artista">Artista</label>
+            <input type="text" id="artista" name="artista" required>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </div>   
 </body>
 </html>
