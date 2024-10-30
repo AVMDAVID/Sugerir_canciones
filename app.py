@@ -2,18 +2,26 @@ from flask import Flask, render_template, request, redirect
 from google.oauth2 import service_account
 import gspread
 from datetime import datetime
+import os
+import json
 
 app = Flask(__name__)
 
-creds = service_account.Credentials.from_service_account_file('sugerencias-de-canciones-794434182960.json',
-    scopes=["https://www.googleapis.com/auth/spreadsheets"]  # Asegúrate de incluir el scope correcto
+# Leer la variable de entorno para las credenciales
+creds_json = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+creds_info = json.loads(creds_json)
+
+# Crear las credenciales usando la información JSON
+creds = service_account.Credentials.from_service_account_info(
+    creds_info,
+    scopes=["https://www.googleapis.com/auth/spreadsheets"]
 )
 
 # Autenticación con Google Sheets
 client = gspread.authorize(creds)
 
-# Abre la hoja de cálculo
-spreadsheet_id = "1NrgGLDDv5oZV9qSfRP4LrrVo039zJMPP7ahRf2g7L6k"  # Reemplaza esto con tu ID
+# Abre la hoja de cálculo usando el ID
+spreadsheet_id = "1NrgGLDDv5oZV9qSfRP4LrrVo039zJMPP7ahRf2g7L6k"  # Reemplaza esto con tu ID de hoja de cálculo
 spreadsheet = client.open_by_key(spreadsheet_id)
 worksheet = spreadsheet.sheet1  # Selecciona la primera hoja
 
