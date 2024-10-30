@@ -16,6 +16,8 @@ body {
     width: 100%;
     max-width: 450px;  /* Ancho máximo del formulario */
     transition: transform 0.3s;  /* Transición al pasar el mouse */
+    box-sizing: border-box;  /* To include padding and border in width */
+    margin: 0 10px;  /* Ensure space on both sides */
 }
 
 .form-container:hover {
@@ -44,6 +46,7 @@ body {
     border: 1px solid #dddddd;
     font-size: 16px;  /* Tamaño de fuente más grande */
     transition: border-color 0.3s;  /* Transición de color del borde */
+    box-sizing: border-box;  /* To include padding and border in width */
 }
 
 .form-container input[type="text"]:focus {
@@ -63,6 +66,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;  /* Transición de fondo y tamaño */
     font-size: 16px;  /* Tamaño de fuente más grande */
+    box-sizing: border-box;  /* To include padding in width */
 }
 
 .form-container button:hover {
@@ -72,22 +76,4 @@ body {
 
 .form-container button:active {
     transform: scale(0.95);  /* Reducir el tamaño del botón al hacer clic */
-    transition: transform 0.1s;  /* Transición rápida al hacer clic */
-}
-
-/* Estilos responsivos */
-@media (max-width: 600px) {
-    .form-container {
-        padding: 20px;  /* Reducir el padding en móviles */
-    }
-
-    .form-container h1 {
-        font-size: 24px;  /* Tamaño de fuente más pequeño */
-    }
-
-    .form-container input[type="text"],
-    .form-container button {
-        font-size: 14px;  /* Tamaño de fuente más pequeño */
-        padding: 12px;  /* Reducir el tamaño del padding en campos y botones */
-    }
-}
+    transition: transform 0.1s
