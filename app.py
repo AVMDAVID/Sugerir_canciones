@@ -29,7 +29,7 @@ def enviar():
     # Check for duplicates
     existing_records = worksheet.get_all_records()
     for record in existing_records:
-        if record['Cancion'].upper() == cancion and record['Artista'].upper() == artista:
+        if record.get('Nombre de la Canción', '').upper() == cancion and record.get('Artista', '').upper() == artista:
             flash('Esta sugerencia ya ha sido registrada. Por favor, ingrese una diferente.')
             return redirect('/')
 
