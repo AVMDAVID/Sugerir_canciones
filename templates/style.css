@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f9fc;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;  /* Color de fondo suave */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,44 +10,67 @@ body {
 
 .form-container {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;  /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;  /* Ancho máximo del formulario */
+    transition: transform 0.3s;  /* Transición al pasar el mouse */
+}
+
+.form-container:hover {
+    transform: translateY(-5px);  /* Efecto de elevación al pasar el mouse */
 }
 
 .form-container h1 {
     color: #333333;
-    font-size: 24px;
+    font-size: 28px;  /* Tamaño de fuente más grande */
     text-align: center;
+    margin-bottom: 20px;  /* Espacio debajo del título */
 }
 
 .form-container label {
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;  /* Mayor espacio arriba */
     color: #555555;
     font-weight: bold;
 }
 
-.form-container input[type="text"],
-.form-container button {
+.form-container input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 15px;  /* Mayor tamaño en los campos */
     margin-top: 8px;
-    border-radius: 5px;
+    border-radius: 8px;  /* Bordes redondeados en los campos */
     border: 1px solid #dddddd;
+    font-size: 16px;  /* Tamaño de fuente más grande */
+    transition: border-color 0.3s;  /* Transición de color del borde */
+}
+
+.form-container input[type="text"]:focus {
+    border-color: #007bff;  /* Color del borde al enfocar */
+    outline: none;  /* Quitar el contorno */
 }
 
 .form-container button {
+    width: 100%;
+    padding: 15px;  /* Mayor tamaño en el botón */
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
     background-color: #007bff;
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;  /* Transición de fondo y tamaño */
+    font-size: 16px;  /* Tamaño de fuente más grande */
 }
 
 .form-container button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3;  /* Color del botón al pasar el mouse */
+    transform: scale(1.05);  /* Aumentar el tamaño del botón ligeramente */
+}
+
+.form-container button:active {
+    transform: scale(0.95);  /* Reducir el tamaño del botón al hacer clic */
+    transition: transform 0.1s;  /* Transición rápida al hacer clic */
 }
