@@ -1,6 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;  /* Color de fondo suave */
+    background-image: url('fondo.jpg');  /* Relative or absolute path to your local image */
+    background-size: cover;  /* Make sure the image covers the whole background */
+    background-position: center;  /* Center the background image */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +11,7 @@ body {
 }
 
 .form-container {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent background for better readability */
     padding: 30px;
     border-radius: 15px;  /* Bordes redondeados */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -76,4 +78,27 @@ body {
 
 .form-container button:active {
     transform: scale(0.95);  /* Reducir el tamaño del botón al hacer clic */
-    transition: transform 0.1s
+    transition: transform 0.1s;  /* Transición rápida al hacer clic */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;  /* A little padding for the body on small screens */
+    }
+
+    .form-container {
+        padding: 20px;  /* Reducir el padding en móviles */
+        margin: 0 10px;  /* Ensure space on both sides */
+    }
+
+    .form-container h1 {
+        font-size: 24px;  /* Tamaño de fuente más pequeño */
+    }
+
+    .form-container input[type="text"],
+    .form-container button {
+        font-size: 14px;  /* Tamaño de fuente más pequeño */
+        padding: 12px;  /* Reducir el tamaño del padding en campos y botones */
+    }
+}
